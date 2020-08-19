@@ -12,7 +12,7 @@ class SignUp extends React.Component {
 			email: "",
 			password: "",
 			birthday: "",
-			address: +"",
+			address: "",
 			parentprofession: "",
 			level: "",
 			transport: 0,
@@ -54,7 +54,7 @@ class SignUp extends React.Component {
 			    <input className="inputradio" type="radio" name="role"
 			    value="teacher" onChange={this.onRadioChange} checked={this.state.role==="teacher"}/>
 			    <span class="design"></span>
-			    <span class="text">Enseignat</span>
+			    <span class="text">Enseignant</span>
 			  </label>
 
 			  <label>

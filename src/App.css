@@ -1,5 +1,13 @@
+html, body{
+  height: 100% !important;
+}
+
+#root{
+  height: 100% !important;
+}
 .App {
   text-align: center;
+  height: 100% !important;
 }
 
 .App-logo {
@@ -28,6 +36,42 @@
   color: #61dafb;
 }
 
+.radio{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 18rem;
+  margin-bottom: 18rem;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  width: 100%;
+}
+
+a:hover{
+  text-decoration: none !important;
+  color: white !important;
+}
+.inscription{
+  font-family: 'Satisfy', cursive;
+  opacity: 0.7;
+}
+.register{
+  background: linear-gradient(323deg, rgba(165,124,189,1) 0%, rgba(251,255,86,1) 100%, rgba(255,255,255,1) 100%);
+  width: 100%;
+  padding-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 3rem;
+  height: 100% !important;
+}
+.contgr{
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +79,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.hidescroll::-webkit-scrollbar {
+  display: none;
 }

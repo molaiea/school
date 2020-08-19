@@ -11,6 +11,7 @@ import student from './assets/graduated.svg';
 import teacher from './assets/teacher.svg';
 import register from './assets/register.svg';
 import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
 
 function App() {
   return (
@@ -23,18 +24,24 @@ function App() {
           return(
             <div>
               <div className="grid">
+    <Link to="/etudiant" className="white">
     <div className="w-90 grow pointer mt5 center bg-orange pa5 f2 serif contgr">
     <img className="w-50 center" src={student} alt="student" />
       <span>Espace Etudiant</span>
       </div>
+    </Link>
+    <Link to="/enseignant" className="white">
       <div className="w-90  grow pointer mt5 center bg-green pa5 f2 serif contgr">
       <img className="w-50 center tc" src={teacher} alt="teacher" />
       <span>Espace Enseignant</span>
       </div>
+    </Link>
+    <Link to="/admin" className="white">
       <div className="w-90 grow pointer mt5 center bg-blue pa5 f2 serif contgr">
       <img className="w-50 center" src={admin} alt="admin" />
       <span>Espace Administrateur</span>
       </div>
+    </Link>
       </div>
       <h1 className="mt5">Ou</h1>
       <Link to="/register">
@@ -49,7 +56,21 @@ function App() {
       }/>
     
     <Route path="/register" component={SignUp}/>
-
+    <Route path="/etudiant" exact strict render={()=>{
+      return(
+        <SignIn role={"Espace Etudiant"}/>
+      )
+    }}/>
+    <Route path="/enseignant" exact strict render={()=>{
+      return(
+        <SignIn role={"Espace Enseignant"}/>
+      )
+    }}/>
+    <Route path="/admin" exact strict render={()=>{
+      return(
+        <SignIn role={"Espace Administrateur"}/>
+      )
+    }}/>
     </Switch>
     </Router>
     </div>

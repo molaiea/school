@@ -25,7 +25,7 @@ function App() {
               <div className="grid">
     <div className="w-90 grow pointer mt5 center bg-orange pa5 f2 serif contgr">
     <img className="w-50 center" src={student} alt="student" />
-      <span>Student</span>
+      <span>Espace Etudiant</span>
       </div>
       <div className="w-90  grow pointer mt5 center bg-green pa5 f2 serif contgr">
       <img className="w-50 center tc" src={teacher} alt="teacher" />

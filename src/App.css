@@ -36,6 +36,7 @@ html, body{
   color: #61dafb;
 }
 
+
 .radio{
   display: flex;
   flex-direction: column;
@@ -84,3 +85,4 @@ a:hover{
 .hidescroll::-webkit-scrollbar {
   display: none;
 }
+

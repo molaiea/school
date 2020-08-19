@@ -1,23 +1,30 @@
 {
   "files": {
-    "main.css": "/school/static/css/main.5f361e03.chunk.css",
-    "main.js": "/school/static/js/main.be69c1c7.chunk.js",
-    "main.js.map": "/school/static/js/main.be69c1c7.chunk.js.map",
+    "main.css": "/school/static/css/main.05e4c328.chunk.css",
+    "main.js": "/school/static/js/main.1d822b2b.chunk.js",
+    "main.js.map": "/school/static/js/main.1d822b2b.chunk.js.map",
     "runtime-main.js": "/school/static/js/runtime-main.4771c5f2.js",
     "runtime-main.js.map": "/school/static/js/runtime-main.4771c5f2.js.map",
-    "static/js/2.140a94d2.chunk.js": "/school/static/js/2.140a94d2.chunk.js",
-    "static/js/2.140a94d2.chunk.js.map": "/school/static/js/2.140a94d2.chunk.js.map",
+    "static/css/2.3e7f680e.chunk.css": "/school/static/css/2.3e7f680e.chunk.css",
+    "static/js/2.d2b65dfb.chunk.js": "/school/static/js/2.d2b65dfb.chunk.js",
+    "static/js/2.d2b65dfb.chunk.js.map": "/school/static/js/2.d2b65dfb.chunk.js.map",
     "index.html": "/school/index.html",
-    "precache-manifest.44ecdad88bfcd0217c85fd4eb47e6ee5.js": "/school/precache-manifest.44ecdad88bfcd0217c85fd4eb47e6ee5.js",
+    "precache-manifest.c2d4c8fb43da3ccac1369b70f3481aa6.js": "/school/precache-manifest.c2d4c8fb43da3ccac1369b70f3481aa6.js",
     "service-worker.js": "/school/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/school/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.140a94d2.chunk.js.LICENSE.txt": "/school/static/js/2.140a94d2.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/school/static/media/logo.5d5d9eef.svg"
+    "static/css/2.3e7f680e.chunk.css.map": "/school/static/css/2.3e7f680e.chunk.css.map",
+    "static/css/main.05e4c328.chunk.css.map": "/school/static/css/main.05e4c328.chunk.css.map",
+    "static/js/2.d2b65dfb.chunk.js.LICENSE.txt": "/school/static/js/2.d2b65dfb.chunk.js.LICENSE.txt",
+    "static/media/admin.svg": "/school/static/media/admin.bb9198a4.svg",
+    "static/media/graduated.svg": "/school/static/media/graduated.d9aa6d2a.svg",
+    "static/media/logo.svg": "/school/static/media/logo.5d5d9eef.svg",
+    "static/media/register.svg": "/school/static/media/register.f902848a.svg",
+    "static/media/teacher.svg": "/school/static/media/teacher.f400da19.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4771c5f2.js",
-    "static/js/2.140a94d2.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.be69c1c7.chunk.js"
+    "static/css/2.3e7f680e.chunk.css",
+    "static/js/2.d2b65dfb.chunk.js",
+    "static/css/main.05e4c328.chunk.css",
+    "static/js/main.1d822b2b.chunk.js"
   ]
 }

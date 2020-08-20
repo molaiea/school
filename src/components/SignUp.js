@@ -16,7 +16,8 @@ class SignUp extends React.Component {
 			parentprofession: "",
 			level: "",
 			transport: 0,
-			role: "student"
+			role: "student",
+			gender: ""
 		}
 	}
 
@@ -32,6 +33,34 @@ class SignUp extends React.Component {
   		})
   	}
 
+  	onGenderChange=e=>{
+  		this.setState({
+  			gender: e.target.value
+  		})
+  	}
+
+  	onSubmitSignUp = (e)=>{
+		e.preventDefault();
+		fetch('http://localhost:1809/register', {
+			method: 'post',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({
+				fullname: this.state.fullname,
+				email: this.state.email,
+				password: this.state.password,
+				birthday: this.state.birthday,
+				address: this.state.address,
+				parentprofession: this.state.parentprofession,
+				level: this.state.level,
+				transport: this.state.transport,
+				role: this.state.role,
+				gender: this.state.gender
+			})
+		}).then(res=>console.log(res))
+		
+		.catch(err=>console.log(err))
+		
+	}
 
 	render(){
 
@@ -75,21 +104,24 @@ class SignUp extends React.Component {
 						    <input 
 						    className=" input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 						    name="fullname"
-						    type="text" aria-describedby="name-desc"/>
+						    type="text" aria-describedby="name-desc"
+						    onChange={this.handleChange}/>
 						  </div>
 						  <div>
 					    <label className="f4 b white db mb2">Addresse Email </label>
 					    <input 
 					    className="input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 					    name="email"
-					    type="text" aria-describedby="name-desc"/>
+					    type="text" aria-describedby="name-desc"
+					    onChange={this.handleChange}/>
 					  </div>
 					  <div>
 					    <label className="f4 b white db mb2">Mot de Passe </label>
 					    <input 
 					    className="input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 					    name="password"
-					    type="text" aria-describedby="name-desc"/>
+					    type="text" aria-describedby="name-desc"
+					    onChange={this.handleChange}/>
 					  </div>
 					  <div>
 					    <label className="f4 b white db mb2">Date de Naissance </label>
@@ -99,18 +131,33 @@ class SignUp extends React.Component {
 					    type="date" aria-describedby="name-desc"/>
 					  </div>
 					  <div>
+					    <label className="f4 b white db mb2">Sexe </label>
+					    <label>
+						    <input type="checkbox" name="gender" value="male"
+						    onChange={this.onGenderChange} checked={this.state.gender==="male"}/>
+						    <span>Male</span>
+						  </label>
+						  <label>
+						    <input type="checkbox" name="gender" value="female"
+						    onChange={this.onGenderChange} checked={this.state.gender==="female"}/>
+						    <span >Femelle</span>
+						</label>
+					  </div>
+					  <div>
 					    <label class="f4 b white db mb2">Addresse </label>
 					    <input 
 					    className="input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 					    name="address"
-					    type="text" aria-describedby="name-desc"/>
+					    type="text" aria-describedby="name-desc"
+					    onChange={this.handleChange}/>
 					  </div>
 					  <div>
 					    <label className="f4 b white db mb2">Profession du Parent <small>(ou tuteur)</small> </label>
 					    <input 
 					    className="input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 					    name="parentprofession"
-					    type="text" aria-describedby="name-desc"/>
+					    type="text" aria-describedby="name-desc"
+					    onChange={this.handleChange}/>
 					  </div>
 					  <div >
 					    <label className="f4 b white db ">Niveau Scolaire </label>
@@ -129,7 +176,7 @@ class SignUp extends React.Component {
 						    <option value="0">Non</option>
 						</select>
 					  </div>
-					  <Link className="f3 ph3 pv3 black-80 bg-moon-gray shadow-5" to="/">S'inscrire</Link>
+					  <Link onClick={this.onSubmitSignUp} className="f3 ph3 pv3 black-80 bg-moon-gray shadow-5" to="/">S'inscrire</Link>
 						</form>
 						: this.state.role==="teacher" ? 
 						<form style={{ overflowY: 'scroll' ,height:'100%'}} class="hidescroll pa4 black-80 w-60 ml5 shadow-5">
@@ -139,21 +186,24 @@ class SignUp extends React.Component {
 						    <input 
 						    className=" input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 						    name="fullname"
-						    type="text" aria-describedby="name-desc"/>
+						    type="text" aria-describedby="name-desc"
+						    onChange={this.handleChange}/>
 						  </div>
 						  <div>
 					    <label className="f4 b white db mb2">Addresse Email </label>
 					    <input 
 					    className="input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 					    name="email"
-					    type="text" aria-describedby="name-desc"/>
+					    type="text" aria-describedby="name-desc"
+					    onChange={this.handleChange}/>
 					  </div>
 					  <div>
 					    <label className="f4 b white db mb2">Mot de Passe </label>
 					    <input 
 					    className="input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 					    name="password"
-					    type="text" aria-describedby="name-desc"/>
+					    type="text" aria-describedby="name-desc"
+					    onChange={this.handleChange}/>
 					  </div>
 					  <div>
 					    <label className="f4 b white db mb2">Date de Naissance </label>
@@ -167,14 +217,16 @@ class SignUp extends React.Component {
 					    <input 
 					    className="input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 					    name="address"
-					    type="text" aria-describedby="name-desc"/>
+					    type="text" aria-describedby="name-desc"
+					    onChange={this.handleChange}/>
 					  </div>
 					  <div>
 					    <label className="f4 b white db mb2">Profession du Parent <small>(ou tuteur)</small> </label>
 					    <input 
 					    className="input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 					    name="parentprofession"
-					    type="text" aria-describedby="name-desc"/>
+					    type="text" aria-describedby="name-desc"
+					    onChange={this.handleChange}/>
 					  </div>
 					  <div >
 					    <label className="f4 b white db ">Niveau Scolaire </label>
@@ -203,21 +255,24 @@ class SignUp extends React.Component {
 						    <input 
 						    className=" input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 						    name="fullname"
-						    type="text" aria-describedby="name-desc"/>
+						    type="text" aria-describedby="name-desc"
+						    onChange={this.handleChange}/>
 						  </div>
 						  <div>
 					    <label className="f4 b white db mb2">Addresse Email </label>
 					    <input 
 					    className="input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 					    name="email"
-					    type="text" aria-describedby="name-desc"/>
+					    type="text" aria-describedby="name-desc"
+					    onChange={this.handleChange}/>
 					  </div>
 					  <div>
 					    <label className="f4 b white db mb2">Mot de Passe </label>
 					    <input 
 					    className="input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 					    name="password"
-					    type="text" aria-describedby="name-desc"/>
+					    type="text" aria-describedby="name-desc"
+					    onChange={this.handleChange}/>
 					  </div>
 					  <div>
 					    <label className="f4 b white db mb2">Date de Naissance </label>
@@ -231,14 +286,16 @@ class SignUp extends React.Component {
 					    <input 
 					    className="input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 					    name="address"
-					    type="text" aria-describedby="name-desc"/>
+					    type="text" aria-describedby="name-desc"
+					    onChange={this.handleChange}/>
 					  </div>
 					  <div>
 					    <label className="f4 b white db mb2">Profession du Parent <small>(ou tuteur)</small> </label>
 					    <input 
 					    className="input-reset ba b--black-20 pa2 mb2 db w-100  h3 bg-white-70" 
 					    name="parentprofession"
-					    type="text" aria-describedby="name-desc"/>
+					    type="text" aria-describedby="name-desc"
+					    onChange={this.handleChange}/>
 					  </div>
 					  <div >
 					    <label className="f4 b white db ">Niveau Scolaire </label>
@@ -257,7 +314,7 @@ class SignUp extends React.Component {
 						    <option value="0">Non</option>
 						</select>
 					  </div>
-					  <Link className="f3 ph3 pv3 black-80 bg-moon-gray shadow-5" to="/">S'inscrire</Link>
+					  <Link onClick={this.onSubmitSignUp} className="f3 ph3 pv3 black-80 bg-moon-gray shadow-5" to="/">S'inscrire</Link>
 						</form>}
 			</div>
 			</div>

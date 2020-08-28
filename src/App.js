@@ -12,7 +12,7 @@ import teacher from './assets/teacher.svg';
 import register from './assets/register.svg';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
-
+import Admin from './admin/Admin';
 function App() {
   return (
     <div className="App">
@@ -56,21 +56,22 @@ function App() {
       }/>
     
     <Route path="/register" component={SignUp}/>
-    <Route path="/etudiant" exact strict render={()=>{
+    <Route path="/etudiant/signin" exact strict render={()=>{
       return(
         <SignIn role={"Espace Etudiant"}/>
       )
     }}/>
-    <Route path="/enseignant" exact strict render={()=>{
+    <Route path="/enseignant/signin" exact strict render={()=>{
       return(
         <SignIn role={"Espace Enseignant"}/>
       )
     }}/>
-    <Route path="/admin" exact strict render={()=>{
+    <Route path="/admin/signin" exact strict render={()=>{
       return(
         <SignIn role={"Espace Administrateur"}/>
       )
     }}/>
+    <Route path="/admin" component={Admin}/>
     </Switch>
     </Router>
     </div>
